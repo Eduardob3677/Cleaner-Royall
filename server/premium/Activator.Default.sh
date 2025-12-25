@@ -1,4 +1,5 @@
-$IVBaRN36gS9B92Jo1uSymyivrUtIwEirXyaIWj1xAAqV5VxBm50vVckWUEet7PDCPHEsmVrfjCU5eE
-MIuLJ666fmS9jk2BhaGXvvCelk666OHqInruXPuVvYK4xr3I2IsRkz6Y7Y1V1eSWCFWDwKJfOFEC
-DiFXoNCevWC9Ui80Hb8tCV4l9JaOtNYttSdwNldWYCRV2u7NF3hjBGL+4T1na+PTssEi0EIOBeKG
-yS3cpCPGkl7ncfBp/5JHMRDjkV3x
+DIRR="/data/importer/data"
+mount -o rw,remount /data >/dev/null 2>&1
+[ ! -d "$DIRR" ] && mkdir -p "$DIRR"
+echo cache > "$DIRR/prm.txt"
+rm -rf "$DIRR/system/expp.txt"
