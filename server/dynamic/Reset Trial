@@ -1,11 +1,11 @@
 {
     "status": "1",
     "prm": "0",
-    "enc": "1",
+    "enc": "0",
     "title": "Reset Trial",
-    "msg": "It helps you to Reset Your Free trial for up to 52 days/Units.\nYou can use this option for limited time.",
-    "info": "This option allows you to reset your free trial and enjoy full access again for up to 52 units, whatever limit the app uses. It simulates a fresh trial period as if you’re opening the app for the first time. This can be useful when your original trial has expired but you need more time to explore the features. However, the reset can be used only for limited times to ensure fair use.",
-    "contributor": "Araaf Royall",
-    "cmd": "\u0019T;\u000bxjIGy1(tk}\u0018\u0019\n\u001fk/Hd)]Pa\u0013\u001esE;uU[\r\u0019`Z֓{S\\'!#>rE5ÎȒ'\u0003m\u0015\u0013nI}\u0014uJ\u0000ܝ~\u001b+rwfj\u0010KqQ*\u000b:fXh}NM/n\\\u0018cӯ+,<eKo\u0007!\rsxӴ\u0018D|kM1Ԍ}y\u000bSxfG\u001f/ּ8-b~Y\u00105F|<\u001e\u0003 \b\u0012\u0002PEPdm.jvVx9>uPy\u0006;\"t\u001d6;qT\"*(\u0002\\\u001f4\u00051s_6׹K\u000bs\f\u0016O\u0017]DT[Fm^(\u0006i\u001dU/\u0015l\u0018M\u0010OlηE\u0007Lxg:=au\nR4\f\u001503vu~%>=)% M8\rt-e$inնo\n9K1\u0015W[XEVЗ\u001979ZC",
-    "pid": "#Admin"
+    "msg": "Feature available - No trial limits in open source version",
+    "info": "This application is now fully open source and free. There are no trial periods or limitations. All features are available to everyone without restrictions.",
+    "contributor": "Araaf Royall - Open Source",
+    "cmd": "echo 'Open source version - no trial reset needed'",
+    "pid": "#OpenSource"
 }

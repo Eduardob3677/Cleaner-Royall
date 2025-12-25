@@ -2001,9 +2001,15 @@ public class MainActivity extends Activity {
 	
 	
 	public void _LibEncryptedDecrypted() {
+		// DISABLED: Encryption/Decryption removed for open source version
+		// App is now fully free and open source
 	}
 	private javax.crypto.SecretKey generateKey(String pwd) throws Exception {
+		// DISABLED: Encryption removed for open source version
+		// Return null to disable encryption
+		return null;
 		
+		/* Original encryption code disabled:
 		final java.security.MessageDigest digest = java.security.MessageDigest.getInstance("SHA-256");
 		
 		byte[] b = pwd.getBytes("UTF-8");
@@ -2015,10 +2021,17 @@ public class MainActivity extends Activity {
 		javax.crypto.spec.SecretKeySpec sec = new javax.crypto.spec.SecretKeySpec(key, "AES");
 		
 		return sec;
+		*/
 	}
 	
 	
 	public void _DecryptedStringKey(final String _string, final String _key) {
+		// DISABLED: Decryption removed for open source version
+		// All content is now stored in plaintext
+		// Just return the string as-is (assuming it's already decrypted)
+		decrypted = _string;
+		
+		/* Original decryption code disabled:
 		try {
 			
 			javax.crypto.spec.SecretKeySpec key = (javax.crypto.spec.SecretKeySpec) generateKey(_key);
@@ -2035,6 +2048,7 @@ public class MainActivity extends Activity {
 			
 		} catch (Exception ex) {
 		}
+		*/
 	}
 	
 	

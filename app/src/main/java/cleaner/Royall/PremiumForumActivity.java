@@ -1,5 +1,9 @@
 package Cleaner.Royall;
 
+// NOTE: This application is now fully OPEN SOURCE and FREE
+// Premium features have been removed. All functionality is available to everyone.
+// This activity is kept for historical purposes but should not be accessible in the app.
+
 import android.animation.*;
 import android.app.*;
 import android.app.Activity;
