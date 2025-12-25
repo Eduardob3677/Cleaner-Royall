@@ -2,7 +2,7 @@
     "id": "65013",
     "title": "[MIUI] MiLink Service folder",
     "description": "MiLink Service Folder In $INT + MultiUser",
-    "enc": "1",
+    "enc": "0",
     "status": "1",
     "cmd": "/data/media/*/com.milink.service"
 }

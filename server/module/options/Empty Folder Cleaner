@@ -2,7 +2,7 @@
     "title": "Empty Folder Cleaner",
     "status": "1",
     "name": "EmptyFolder",
-    "enc": "1",
+    "enc": "0",
     "description": "It can add Empty folder cleaner(Multi-User) support to Module",
     "data": "#!/system/bin/sh\n\nfind \"/data/media/\" -type d -empty -delete\n",
     "info": "none"
