@@ -2,7 +2,7 @@
     "title": "Custom Cleaner",
     "status": "1",
     "name": "CustomCleanerMainSlot",
-    "enc": "1",
+    "enc": "0",
     "description": "It can add Custom Cleaner to module.",
     "data": "\ninpf=\"/data/CleanerRoyall/cc/main.txt\"\n\n[ ! -f \"$inpf\" ] && echo > /data/local/tmp/X\n\nwhile IFS= read -r dir || [ -n \"$dir\" ]; do\n  dir=$(echo \"$dir\" | sed 's/^\"//; s/\"$//')\n  rm -rf \"$dir\" > /dev/null 2>&1\ndone < \"$inpf\"\n",
     "info": "Custom directories will be cleaned at every selected interval when integrating this feature in module"
