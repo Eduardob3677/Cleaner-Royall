@@ -10,11 +10,28 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import re
 from datetime import datetime
 from pathlib import Path
 
 
 DEFAULT_COMMENT = "Thanks For Trying Premium Version\nKeep Supporting the Project 👍"
+
+
+def _validate_pid(pid: str) -> str:
+    if Path(pid).name != pid or "/" in pid or "\\" in pid:
+        raise argparse.ArgumentTypeError("pid must not contain path separators.")
+    if not re.fullmatch(r"[A-Za-z0-9._=+-]+", pid):
+        raise argparse.ArgumentTypeError(
+            "pid may only contain letters, numbers, dot, underscore, plus, minus or equals."
+        )
+    return pid
+
+
+def _validate_user_id(user_id: str) -> str:
+    if not user_id.isdigit():
+        raise argparse.ArgumentTypeError("user-id must be numeric.")
+    return user_id
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -26,6 +43,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--pid",
+        type=_validate_pid,
         required=True,
         help="Premium identifier. This is also used as the response filename.",
     )
@@ -37,6 +55,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--user-id",
         dest="user_id",
+        type=_validate_user_id,
         help="Optional numeric user identifier. Defaults to a random 5-digit value.",
     )
     parser.add_argument(
@@ -53,6 +72,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--mode",
         default="Permanent Access",
         help="Subscription mode label to persist with the response.",
+    )
+    parser.add_argument(
+        "--date-format",
+        default="%d/%m/%Y",
+        help="Custom strftime format for the date field (default: %(default)s).",
     )
     parser.add_argument(
         "--comment",
@@ -91,9 +115,14 @@ def main() -> None:
             "Use --force to replace it."
         )
 
+    try:
+        formatted_date = datetime.now().strftime(args.date_format)
+    except Exception as exc:  # pragma: no cover - defensive guard
+        parser.error(f"Invalid date format: {exc}")
+
     payload = {
         "id": args.user_id or f"{random.randint(0, 99999):05d}",
-        "date": datetime.now().strftime("%d/%m/%Y"),
+        "date": formatted_date,
         "status": args.status,
         "key": args.key,
         "comment": args.comment,

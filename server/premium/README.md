@@ -11,4 +11,5 @@ python3 generate_premium_response.py --pid "<premium-id>" --key "<activation-key
 ```
 
 The response is created with status `1` (active) by default; pass `--status 0` to
-disable an entry or `--force` to overwrite an existing file.
+disable an entry, use `--date-format` to change the timestamp format, or `--force`
+to overwrite an existing file.
