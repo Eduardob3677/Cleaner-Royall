@@ -9,8 +9,8 @@ from __future__ import annotations
 
 import argparse
 import json
-import random
 import re
+import secrets
 from datetime import datetime
 from pathlib import Path
 
@@ -117,11 +117,11 @@ def main() -> None:
 
     try:
         formatted_date = datetime.now().strftime(args.date_format)
-    except Exception as exc:  # pragma: no cover - defensive guard
+    except (TypeError, ValueError) as exc:  # pragma: no cover - defensive guard
         parser.error(f"Invalid date format: {exc}")
 
     payload = {
-        "id": args.user_id or f"{random.randint(0, 99999):05d}",
+        "id": args.user_id or f"{secrets.randbelow(100000):05d}",
         "date": formatted_date,
         "status": args.status,
         "key": args.key,
