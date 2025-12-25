@@ -37,7 +37,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--mode",
-        default="Permanent Acess",
+        default="Permanent Access",
         help="Access mode text saved with the premium response.",
     )
     parser.add_argument(
