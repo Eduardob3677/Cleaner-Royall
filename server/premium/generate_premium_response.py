@@ -120,7 +120,7 @@ def main() -> None:
 
     try:
         formatted_date = datetime.now().strftime(args.date_format)
-    except ValueError as exc:  # pragma: no cover - defensive guard
+    except ValueError as exc:
         parser.error(f"Invalid date format: {exc}")
 
     user_id = args.user_id
