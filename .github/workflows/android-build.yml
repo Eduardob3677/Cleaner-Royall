@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Java (for SDK)
+      - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
@@ -25,19 +25,10 @@ jobs:
 
       - name: Install SDK components
         run: |
-          sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
-
-      - name: Set up Java (for Gradle)
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: "8"
+          sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v3
-        with:
-          gradle-version: "5.1.1"
-          arguments: assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
