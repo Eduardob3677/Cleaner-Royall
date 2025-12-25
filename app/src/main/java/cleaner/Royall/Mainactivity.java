@@ -1020,7 +1020,7 @@ public class MainActivity extends Activity {
 					@Override
 					public void onClick(DialogInterface _dialog, int _which) {
 						chng.setAction(Intent.ACTION_VIEW);
-						chng.setData(Uri.parse("https://github.com/araafroyall/Cleaner-Royall/blob/main/ChangeLog.txt"));
+						chng.setData(Uri.parse("https://github.com/Eduardob3677/Cleaner-Royall/blob/main/ChangeLog.txt"));
 						startActivity(chng);
 					}
 				});
@@ -1181,7 +1181,7 @@ public class MainActivity extends Activity {
 					@Override
 					public void onClick(View _view) {
 						update.setAction(Intent.ACTION_VIEW);
-						update.setData(Uri.parse("https://github.com/araafroyall/Cleaner-Royall/issues"));
+						update.setData(Uri.parse("https://github.com/Eduardob3677/Cleaner-Royall/issues"));
 						startActivity(update);
 					}
 				});
@@ -1214,7 +1214,7 @@ public class MainActivity extends Activity {
 						@Override
 						public void onClick(DialogInterface _dialog, int _which) {
 							c.setAction(Intent.ACTION_VIEW);
-							c.setData(Uri.parse("https://github.com/araafroyall/Cleaner-Royall"));
+							c.setData(Uri.parse("https://github.com/Eduardob3677/Cleaner-Royall"));
 							startActivity(c);
 						}
 					});
@@ -1230,7 +1230,7 @@ public class MainActivity extends Activity {
 						@Override
 						public void onClick(DialogInterface _dialog, int _which) {
 							c.setAction(Intent.ACTION_VIEW);
-							c.setData(Uri.parse("https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk"));
+							c.setData(Uri.parse("https://github.com/Eduardob3677/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk"));
 							startActivity(c);
 						}
 					});
@@ -1262,7 +1262,7 @@ public class MainActivity extends Activity {
 							@Override
 							public void onClick(DialogInterface _dialog, int _which) {
 								c.setAction(Intent.ACTION_VIEW);
-								c.setData(Uri.parse("https://github.com/araafroyall/Cleaner-Royall"));
+								c.setData(Uri.parse("https://github.com/Eduardob3677/Cleaner-Royall"));
 								startActivity(c);
 							}
 						});
@@ -1278,7 +1278,7 @@ public class MainActivity extends Activity {
 							@Override
 							public void onClick(DialogInterface _dialog, int _which) {
 								c.setAction(Intent.ACTION_VIEW);
-								c.setData(Uri.parse("https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk"));
+								c.setData(Uri.parse("https://github.com/Eduardob3677/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk"));
 								startActivity(c);
 							}
 						});
