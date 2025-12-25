@@ -1,0 +1,23 @@
+Recursively deletes hidden .system_config directory in internal storage
+Recursively deletes hidden .SHAREit directory in internal storage
+Recursively deletes hidden .android directory in internal storage
+Recursively deletes .thumbnails directories inside all folders at root of internal storage
+Recursively deletes debug_log folder under MIUI in internal storage
+Recursively deletes all files in bugreports directory in internal storage
+Recursively deletes ramdump directory in internal storage
+Recursively deletes logs folder inside Fox directory in internal storage
+Recursively deletes BugReportCache under MIUI in internal storage
+Recursively deletes gallery_disk_cache of com.miui.gallery app
+Recursively deletes com.xiaomi.bluetooth directory in internal storage
+Recursively deletes all app cache folders under Android/data/
+Recursively deletes .globalTrash directory inside DCIM
+Recursively deletes all .trashed* files or directories at root of internal storage
+Recursively deletes all .trashed* items one level deep in internal storage
+Recursively deletes all .trashed* items two levels deep in internal storage
+Recursively deletes all .trashed* items three levels deep in internal storage
+Recursively deletes adbAutoSave directory in internal storage
+Recursively deletes sepolicy_extends directory in internal storage
+Recursively deletes com.android.settings directory in internal storage
+Recursively deletes .com.android.providers.downloads.ui directory
+Recursively deletes .dlprovider directory in internal storage
+Recursively deletes .picker_transcoded directory in internal storage
