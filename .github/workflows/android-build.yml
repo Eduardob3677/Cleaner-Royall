@@ -25,12 +25,10 @@ jobs:
 
       - name: Install SDK components
         run: |
-          sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3"
+          sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v3
-        with:
-          arguments: assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
