@@ -1,0 +1,27 @@
+Deletes logs from /storage/emulated/0/Fox/logs
+Deletes log dump folder from Xiaomi account data
+Finds and deletes all .log files inside /data recursively
+Deletes entire /data/vendor/wlan_logs Wi-Fi log folder
+Deletes thermal dump file from /data/vendor/thermal/
+Deletes last thermal dump file from /data/vendor/thermal/
+Deletes thermal history dump from /data/vendor/thermal/
+Deletes last thermal history dump from /data/vendor/thermal/
+Deletes current LSPD log from /data/adb/lspd/
+Deletes old LSPD log from /data/adb/lspd/
+Deletes server_logging logs from system logging folders
+Deletes update engine log file from /data/misc/
+Deletes runtime log from temporary system directories
+Deletes full /data/log folder if exists
+Deletes kernel/system logger folder from /data/logger
+Deletes debug_log file from all apps’ /files/ directories
+Deletes Logs folder from all apps’ /files/ directories
+Deletes all log-related files in /storage/emulated/0/Android/data/files
+Powerful Enhanced Mode
+Deletes logs directory at /storage/emulated/0/Fox/logs
+Deletes log dump folder in /data/data/com.xiaomi.account/files/dump/log
+Finds and deletes all .log files under /data
+Deletes wlan_logs directory in /data/vendor
+Deletes thermal.dump file from /data/vendor/thermal
+Deletes last_thermal.dump file from /data/vendor/thermal
+Deletes thermal_history.dump file from /data/vendor/thermal
+Deletes thermal_history_last.dump file from /data/vendor/thermal

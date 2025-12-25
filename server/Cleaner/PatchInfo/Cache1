@@ -1,0 +1,20 @@
+Force deletes all files inside each app’s /data/data/*/cache/ directory
+Finds and deletes all files in /data/data/*/cache/ using find -delete
+Deletes all files in /data_mirror/*/null/0/*/cache directories
+Deletes entire /data/data/*/code_cache directories
+Finds and deletes files in /data/data/*/code_cache directories
+Deletes cache directories in /data/user_de/*/*/cache
+Finds and deletes files in /data/user_de/*/*/cache
+Deletes contents inside /data/user_de/*/*/code_cache/
+Finds and deletes /data/user_de/*/*/code_cache directories
+Deletes cache directories in /data/media/*/Android/data/*/cache
+Deletes all files in root-level /cache/ directory
+Triggers pm to trim all app caches up to 999 GB silently
+Powerful Enhance Mode
+Deletes all cache directories in /data_mirror/null/*/cache
+Deletes all code_cache directories in /data_mirror/null/*/code_cache
+Deletes all cache directories in /data/*/*/*/code_cache
+Deletes all code_cache directories in /data/*/*/*/cache
+Deletes all entries in /data/resource-cache silently
+Finds and deletes all "cache" directories under /data
+Finds and deletes all "Cache" directories under /data
