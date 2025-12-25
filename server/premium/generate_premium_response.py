@@ -118,11 +118,15 @@ def main() -> None:
 
     try:
         formatted_date = datetime.now().strftime(args.date_format)
-    except (TypeError, ValueError) as exc:  # pragma: no cover - defensive guard
+    except ValueError as exc:  # pragma: no cover - defensive guard
         parser.error(f"Invalid date format: {exc}")
 
+    user_id = args.user_id
+    if user_id is None:
+        user_id = f"{secrets.randbelow(MAX_RANDOM_USER_ID):05d}"
+
     payload = {
-        "id": args.user_id or f"{secrets.randbelow(MAX_RANDOM_USER_ID):05d}",
+        "id": user_id,
         "date": formatted_date,
         "status": args.status,
         "key": args.key,
