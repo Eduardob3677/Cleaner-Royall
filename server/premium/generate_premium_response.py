@@ -16,12 +16,14 @@ from pathlib import Path
 
 
 DEFAULT_COMMENT = "Thanks For Trying Premium Version\nKeep Supporting the Project 👍"
-MAX_RANDOM_USER_ID = 100000
+USER_ID_RANDOM_LIMIT = 100_000
 
 
 def _validate_pid(pid: str) -> str:
     if Path(pid).name != pid:
         raise argparse.ArgumentTypeError("pid must not contain path separators.")
+    if pid in {".", ".."}:
+        raise argparse.ArgumentTypeError("pid cannot be '.' or '..'.")
     if not re.fullmatch(r"[A-Za-z0-9._=+-]+", pid):
         raise argparse.ArgumentTypeError(
             "pid may only contain letters, numbers, dot, underscore, plus, minus or equals."
@@ -57,7 +59,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--user-id",
         dest="user_id",
         type=_validate_user_id,
-        help="Optional numeric user identifier. Defaults to a random 5-digit value.",
+        help="Optional numeric user identifier. Defaults to a random zero-padded 5-digit value.",
     )
     parser.add_argument(
         "--uid",
@@ -123,7 +125,7 @@ def main() -> None:
 
     user_id = args.user_id
     if user_id is None:
-        user_id = f"{secrets.randbelow(MAX_RANDOM_USER_ID):05d}"
+        user_id = f"{secrets.randbelow(USER_ID_RANDOM_LIMIT):05d}"
 
     payload = {
         "id": user_id,
