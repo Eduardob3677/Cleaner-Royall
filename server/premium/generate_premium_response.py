@@ -16,10 +16,11 @@ from pathlib import Path
 
 
 DEFAULT_COMMENT = "Thanks For Trying Premium Version\nKeep Supporting the Project 👍"
+MAX_RANDOM_USER_ID = 100000
 
 
 def _validate_pid(pid: str) -> str:
-    if Path(pid).name != pid or "/" in pid or "\\" in pid:
+    if Path(pid).name != pid:
         raise argparse.ArgumentTypeError("pid must not contain path separators.")
     if not re.fullmatch(r"[A-Za-z0-9._=+-]+", pid):
         raise argparse.ArgumentTypeError(
@@ -121,7 +122,7 @@ def main() -> None:
         parser.error(f"Invalid date format: {exc}")
 
     payload = {
-        "id": args.user_id or f"{secrets.randbelow(100000):05d}",
+        "id": args.user_id or f"{secrets.randbelow(MAX_RANDOM_USER_ID):05d}",
         "date": formatted_date,
         "status": args.status,
         "key": args.key,
