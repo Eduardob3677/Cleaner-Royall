@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/NewIcon.png" style="width: 30%;" />
+  <img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/NewIcon.png" style="width: 30%;" />
 </p>
 
 # Cleaner Royall 
@@ -11,7 +11,7 @@
 
 𝗧𝗵𝗲 𝗕𝗲𝘀𝘁 𝗖𝗹𝗲𝗮𝗻𝗶𝗻𝗴 𝗔𝗽𝗽 𝗘𝘃𝗲𝗿 𝗠𝗮𝗱𝗲
 
-[![Total Downloads](https://img.shields.io/github/downloads/araafroyall/Cleaner-Royall/total)](https://github.com/araafroyall/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
+[![Total Downloads](https://img.shields.io/github/downloads/Eduardob3677/Cleaner-Royall/total)](https://github.com/Eduardob3677/Cleaner-Royall/releases/download/Latest/CleanerRoyall.apk)
 [![Telegram Channel](https://img.shields.io/badge/Tg%20Channel-lightgreen?logo=telegram
 )](https://t.me/CleanerRoyall)
 [![Telegram Group](https://img.shields.io/badge/Tg%20Group-lightgreen?logo=telegram
@@ -19,7 +19,7 @@
 
 [![Xposed Module](https://img.shields.io/badge/Xposed%20Module-✓-green.svg)]()
 [![Magisk Module](https://img.shields.io/badge/Magisk%20Module-✓-green.svg)]()
-[![Events Update to Tg](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml/badge.svg)](https://github.com/araafroyall/Cleaner-Royall/actions/workflows/notify.yml)
+[![Events Update to Tg](https://github.com/Eduardob3677/Cleaner-Royall/actions/workflows/notify.yml/badge.svg)](https://github.com/Eduardob3677/Cleaner-Royall/actions/workflows/notify.yml)
 
 
 
@@ -36,13 +36,13 @@
 •••••••••••••••••••••••••••••••••
 
 <p align="left">
-  <img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/Info.png" style="width: 100%;" />
+  <img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/Info.png" style="width: 100%;" />
 </p>
 
 
 ## Screenshots
 
-<img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/1.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/2.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/3.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/4.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/5.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/6.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/7.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/8.jpg" width="100"><img src="https://github.com/araafroyall/cleaner-royall/raw/main/assets/Screenshots/9.jpg" width="100">
+<img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/1.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/2.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/3.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/4.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/5.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/6.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/7.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/8.jpg" width="100"><img src="https://github.com/Eduardob3677/cleaner-royall/raw/main/assets/Screenshots/9.jpg" width="100">
 
 
 
@@ -55,7 +55,6 @@ Gmail : CleanerRoyall@gmail.com
 Gmail : AraafRoyall@gmail.com
 
 •••••••••••••••••••••••••••••••••••
-
 
 
 
