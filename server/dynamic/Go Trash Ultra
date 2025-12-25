@@ -1,11 +1,11 @@
 {
     "status": "1",
     "prm": "1",
-    "enc": "1",
+    "enc": "0",
     "title": "Go Trash Ultra",
     "msg": "Use this for Cleaning Large number of Trash Files in background automatically at once.",
     "info": "It can clean Large number of trash files in background + inform you about cleaning by notification 👍.\nit can help you to free space by cleaning  trash waste of upto 30GB.",
     "contributor": "Araaf Royall",
-    "cmd": "o\u0014\\\u0019):5´(ͤ)Ӽ;a2\\ˍ\u0017щ@\u0007$ Z+N-tTw[ܯ<\u00029]q<r*;<M<\u0006Nxg\u0019G#%\u0019j8\u0012sg(E\";ڃ8'in\u0012#>b\t>wWɳIv:EY~pYeQ}x_TsoN0Dif*.N+/'o\u0005\u000bFq{\u001a\\\u00185ã^uzkꂄuP\u0012\u0018\u0018\u0001q\u000brz*\u0019\u0016\u0005(~7\fɜ/.ESQcZ$M\u001e>F\u0011u9_\u001bSݠҰgLsz\u0012!}JsO˧Tj\u000bWzw~\u001d\u0018Wr|Vs\n+\u000f \u0001+Dtłʋ]-h\u0002S3U+W ~\b+\u001fG\u001c֏-JPK3Ρ&(\"Vطm#৷?_oVKC?=9\r\"(1$j\u001f\u00132\u001c,\u001a\rUڒM\u0015ΑΜk\u0006cY&s~ܞGzz)Λ3\u001dgI^4Bxqrq8uqx/\t\u0011֜\u0013Q\u001c\t\u001f--F\u0018[{\b\u0017ߎͬ6T}aKv|GͿJ#5vr0<j)j$\u0018B+~A\u0006'3DH\u001fEyբ(D\u0010\u0010\u001e5\fJd|\u000bG?\u0015~a\t4c(+ Te+\u00112+\u001e\u000bx\u001a边.pOg8VL9\u0002Q\u0007T]%\u001f\u0019lT\u0000%\u001c\u0001\u0011pQW\u0018PY<G:{$ $\u001e\u0006b|M\u0016Š\nӽEґa\u000e`(%\u0007;lܛU\tTatgt?]\u001f\t\u0011,<\u0018?:\u001f6}E!sl\bEma\u00176+,-g\b3ˋj_>´&0(9ۧ\rzRS\" ]sjpa\"7\u001fI%YI*\u0018X~_\t\u0017\u0018om.Z{اT\u0010\"K2",
+    "cmd": "#!/system/bin/sh\n\nmount -o remount,rw /data >/dev/null 2>&1\n\ntmpf=\"/data/local/tmp/royall_cleaner.sh\"\n\ncat <<EOF > \"$tmpf\"\n#!/system/bin/sh\nrm -rf /data/*/*.tmp\nrm -rf /data/*/*.temp\nrm -rf /data/*/*.tempfile\n\nrm -rf /data/*/*/*.tmp\nrm -rf /data/*/*/*.temp\nrm -rf /data/*/*/*.tempfile\n\nrm -rf /data/*/*/*/*.tmp\nrm -rf /data/*/*/*/*.temp\nrm -rf /data/*/*/*/*.tempfile\n\nrm -rf /data/*/*/*/*/*.tmp\nrm -rf /data/*/*/*/*/*.temp\nrm -rf /data/*/*/*/*/*.tempfile\n\nfind /data -type f -name \"*.tmp\" -delete\nfind /data -type f -name \"*.temp\" -delete\nfind /data -type f -name \"*.tempfile\" -delete\n\nsleep 2\n\nsu 2000 -c \"cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Trash Background Cleaning has been Completed.'\"\n\nEOF\n\nchmod 700 \"$tmpf\"\nsu 2000 -c \"cmd notification post -t 'Cleaner Royall Module' 'Tag' 'Trash Background Cleaning has been Started, Please Allow upto 2-3 minutes.'\"\nnohup sh \"$tmpf\" >/dev/null 2>&1 &\necho \" \" \n# end of script.",
     "pid": "#Admin"
 }
