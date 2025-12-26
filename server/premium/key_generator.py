@@ -14,8 +14,11 @@ Based on analysis of:
 Usage:
     python3 key_generator.py <plain_text_key>
 
-Example:
+Example (quotes are shell syntax, not part of the key):
     python3 key_generator.py "67d93aab"
+    
+Or without quotes if no spaces:
+    python3 key_generator.py 67d93aab
     
 Output will be in the format: $IV<base64_encoded_ciphertext>
 

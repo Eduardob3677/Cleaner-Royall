@@ -279,9 +279,9 @@ pip3 install pycryptodome
 
 ### Common Mistakes
 
-1. **Wrong Key**: Using `Araaf@Royall$1211` instead of `AraafRoyall@1211` (no @ symbol between Araaf and Royall)
-2. **Spaces**: The stringMakerKey has NO spaces, unlike ` Cleaner@Royall#6278 `
-3. **Case Sensitivity**: The key is case-sensitive
+1. **Wrong Key**: Using `Araaf@Royall$1211` (with $ symbol) instead of `AraafRoyall@1211` (with @ before 1211)
+2. **Spaces**: The stringMakerKey has NO leading/trailing spaces, unlike ` Cleaner@Royall#6278 `
+3. **Case Sensitivity**: The key is case-sensitive - must be exactly `AraafRoyall@1211`
 
 ## Additional Resources
 
