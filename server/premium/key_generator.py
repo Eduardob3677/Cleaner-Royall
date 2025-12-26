@@ -3,7 +3,13 @@
 Cleaner Royall - Premium Key Generator
 
 This script generates encrypted keys in the format used by the Cleaner Royall premium system.
-The keys use AES-256-CBC encryption with a predefined encryption key.
+The keys use AES-256-CBC encryption with the keys extracted from the APK smali code.
+
+Based on analysis of:
+- https://github.com/Eduardob3677/Cleaner_Royall.git
+- smali_classes6/Cleaner/Royall/a.smali (contains encryption methods)
+- DECRYPTED_KEYS.md (contains all encryption keys)
+- assets/Premium/stringMakerKey.txt: "AraafRoyall@1211"
 
 Usage:
     python3 key_generator.py <plain_text_key>
@@ -12,6 +18,10 @@ Example:
     python3 key_generator.py "67d93aab"
     
 Output will be in the format: $IV<base64_encoded_ciphertext>
+
+The app uses two different keys depending on context:
+- For premium key encryption: "AraafRoyall@1211" (stringMakerKey)
+- For general file encryption: " Cleaner@Royall#6278 " (note the spaces)
 """
 
 import sys
@@ -22,9 +32,15 @@ from Crypto.Util.Padding import pad
 from Crypto.Random import get_random_bytes
 
 
-# Encryption key from OPEN_SOURCE_README.md
-# This key is used for premium keys (AES-256-CBC)
-ENCRYPTION_KEY = "Araaf@Royall$1211"
+# Encryption keys from smali analysis of Cleaner_Royall APK
+# Primary key for premium key generation (from assets/Premium/stringMakerKey.txt)
+STRING_MAKER_KEY = "AraafRoyall@1211"
+
+# Secondary key for file encryption (from smali_classes6/Cleaner/Royall/a.smali line 76)
+SECONDARY_KEY = " Cleaner@Royall#6278 "
+
+# Use STRING_MAKER_KEY for premium key generation
+ENCRYPTION_KEY = STRING_MAKER_KEY
 
 
 def generate_key_from_password(password):

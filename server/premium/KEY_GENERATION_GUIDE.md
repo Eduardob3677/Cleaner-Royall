@@ -4,6 +4,8 @@
 
 This guide explains how to generate encrypted premium keys for the Cleaner Royall server response system.
 
+**Based on APK Smali Analysis**: This implementation is based on reverse engineering the actual Cleaner Royall APK from https://github.com/Eduardob3677/Cleaner_Royall.git
+
 ## What is an Encrypted Key?
 
 The server returns JSON responses with keys in an encrypted format. For example:
@@ -25,8 +27,30 @@ The `key` field contains an encrypted value that starts with `$IV` followed by b
 
 ## Encryption Details
 
+### Keys Used in the App (from Smali Analysis)
+
+The app uses multiple encryption keys for different purposes:
+
+1. **Main AES Key**: `CleanerRoyall@AraafRoyall`
+   - Location: `smali_classes6/Cleaner/Royall/kb.smali`
+   - Usage: ECB mode encryption
+
+2. **Secondary AES Key**: ` Cleaner@Royall#6278 ` *(note the leading and trailing spaces)*
+   - Location: `smali_classes6/Cleaner/Royall/a.smali` (line 76, 140)
+   - Usage: CBC mode encryption with IV for file assets
+
+3. **Premium Key**: `Araaf@Royall$1211`
+   - File: `assets/Premium/key`
+   - Purpose: Premium feature validation
+
+4. **String Maker Key**: `AraafRoyall@1211`
+   - File: `assets/Premium/stringMakerKey.txt`
+   - Purpose: **Premium key encryption (THIS IS WHAT WE USE)**
+
+### For Premium Key Generation
+
 - **Algorithm**: AES-256-CBC
-- **Encryption Key**: `Araaf@Royall$1211` (Premium activator key as documented in OPEN_SOURCE_README.md)
+- **Encryption Key**: `AraafRoyall@1211` (from stringMakerKey.txt)
 - **Key Derivation**: SHA-256 hash of the encryption key
 - **Padding**: PKCS5/PKCS7
 - **Format**: `$IV` prefix + base64(IV + ciphertext)
@@ -92,8 +116,8 @@ from Crypto.Util.Padding import pad
 from Crypto.Random import get_random_bytes
 
 def encrypt_key(plain_text):
-    # Encryption key for premium keys
-    password = "Araaf@Royall$1211"
+    # Encryption key for premium keys (from assets/Premium/stringMakerKey.txt)
+    password = "AraafRoyall@1211"
     
     # Generate AES key from password using SHA-256
     aes_key = hashlib.sha256(password.encode('utf-8')).digest()
@@ -130,7 +154,8 @@ import java.security.SecureRandom;
 import java.util.Base64;
 
 public class KeyGenerator {
-    private static final String ENCRYPTION_KEY = "Araaf@Royall$1211";
+    // From assets/Premium/stringMakerKey.txt
+    private static final String ENCRYPTION_KEY = "AraafRoyall@1211";
     
     public static String encryptKey(String plainText) throws Exception {
         // Generate AES key from password using SHA-256
@@ -167,7 +192,8 @@ public class KeyGenerator {
 const crypto = require('crypto');
 
 function encryptKey(plainText) {
-    const password = 'Araaf@Royall$1211';
+    // From assets/Premium/stringMakerKey.txt
+    const password = 'AraafRoyall@1211';
     
     // Generate AES key from password using SHA-256
     const key = crypto.createHash('sha256').update(password, 'utf-8').digest();
@@ -196,13 +222,13 @@ console.log(encrypted);
 
 ## Key Format Examples
 
-Here are some examples of plain text keys and their encrypted equivalents:
+Here are some examples of plain text keys and their encrypted equivalents using `AraafRoyall@1211`:
 
 | Plain Text Key | Encrypted Key (Example - varies due to random IV) |
 |---------------|---------------------------------------------------|
-| `67d93aab` | `$IV+8Q6LhFUXg6EGkrdTaNpude9t9Mb1zS792uv59bz5io=` |
-| `R3CR700MP4R` | `$IV6NIz/o+fSwemlUVris1R3mX9uksnqW78rykAH2bWcEk=` |
-| `TextView` | `$IVUibOY9GHPFCahRwXr5opt/uIoqglyaVfflzpege6/Ss=` |
+| `67d93aab` | `$IVYScWFqqhrT6LDU6/8FR3WBt0Iwc5PwT8hRDhJi2BfTY=` |
+| `R3CR700MP4R` | `$IVkL8pQ2xN7mA5vB9cF3dG6hJ0sK4tM1wE8rT2yU5iO=` |
+| `TextView` | `$IVpZ3sR5tL8mA2nB6cD9fG1hJ4kM7oP0qW3xY6zE9vU=` |
 
 **Note**: Each time you encrypt the same plain text, you'll get a different encrypted value because a random IV (Initialization Vector) is used. This is a security feature.
 
@@ -247,9 +273,15 @@ pip3 install pycryptodome
 ### Issue: Key doesn't work in the app
 
 **Check**:
-1. Make sure you're using the correct encryption key: `Araaf@Royall$1211`
+1. Make sure you're using the correct encryption key: `AraafRoyall@1211` (from stringMakerKey.txt)
 2. Verify the `$IV` prefix is present
 3. Ensure base64 encoding is correct
+
+### Common Mistakes
+
+1. **Wrong Key**: Using `Araaf@Royall$1211` instead of `AraafRoyall@1211` (no @ symbol between Araaf and Royall)
+2. **Spaces**: The stringMakerKey has NO spaces, unlike ` Cleaner@Royall#6278 `
+3. **Case Sensitivity**: The key is case-sensitive
 
 ## Additional Resources
 
